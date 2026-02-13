@@ -1,6 +1,6 @@
 # Análise de dados utilizando Python
 
-Análise do dataset Titanic, buscando destrinchar as variáveis e como se relacionam com os dados de saída.
+Análise do dataset Titanic, buscando destrinchar as variáveis e como se relacionam com os dados de sobrevivência.
 
 ### Passo a passo
 
