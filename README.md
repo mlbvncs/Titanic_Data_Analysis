@@ -37,21 +37,42 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 2. **pclass:** A grande maior dos passageiros era de terceira classe (aprox. 51,11%), representando mais que a soma entre passageiros da primeira (aprox. 24,24%) e segunda classe (aprox. 20,65%);
 3. **sex:** aprox. 64,76% dos passageiros eram do sexo masculino;
 4. **age:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem entre 0,42 (5,04 meses) e 35 anos, enquanto o maior valor é 80, evidenciando uma discrepância crescente, que implica na média não confiável; 
-5. **sibsp:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem entre 0 e 1 esposos (as)/irmãos, enquanto o maior valor é 8, evidenciando uma discrepância crescente, que implica na média não confiável;
+5. **sibsp:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem entre 0 e 1 esposo (a)/irmãos, enquanto o maior valor é 8, evidenciando uma discrepância crescente, que implica na média não confiável;
 6. **parch:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem 0 pais/filhos, enquanto o maior valor é 6, evidenciando uma discrepância crescente, que implica na média não confiável;
 7. **fare:** A média para essa variável não é confiável. Ao menos 75% dos passageiros desembolsaram entre £ 0 e £ 31, enquanto o maior valor foi aproximadamente £ 512,33, evidenciando uma discrepância crescente extremamente alta no valor que alguns passageiros pagaram, que implica na média não confiável;
 8. **embarked:** A grande maioria (aprox. 72.50%) embarcaram no porto de Southampton.
 
-### 3. Mineração de dados
+### 3. Transformação de dados
+
+- As colunas presentes no conjunto de dados já contam a bem a história dos clientes, portanto não utilizei a engenharia de funcionalidades;
+- Não houve necessidade de padronização ou normalização, pois nenhum algoritmo de aprendizado de máquina será utilizado.
+
+### 4. Mineração de dados
 
 - Fiz análise univariada de todas as colunas além da target "survived", pois as julguei como potencialmente importantes, sendo assim colunas-chave:
 
 1. **age:** Distribuição dissimétrica com vários picos, sendo o maior entre valores próximos a 30 anos; o histrograma mostra que a completude de idades é enorme, desde bebês com meses de idade (um pico significativo) a idosos de 80 anos, com os maiores picos de idade sendo entre 20 e 40 anos;
-2. **sibsp:** Distribuição assimétrica à direita (com pequenas excessões), com a grande maioria dos passageiros tendo um número menor (0) de irmãos/esposos (as) no navio, mas alguns tendo um número significativamente maior;
+2. **sibsp:** Distribuição assimétrica à direita (com pequenas excessões), com a grande maioria dos passageiros tendo um número menor (0) de irmãos/esposo (a) no navio, mas alguns tendo um número significativamente maior;
 3. **parch:** Distribuição assimétrica à direita (com pequenas excessões), com a grande maioria dos passageiros tendo um número menor (0) de pais/filhos no navio, com alguns tendo um número significativamente maior;
 4. **fare:** Distribuição assimétrica à direita, com a grande maioria dos passageiros tendo pagado um valor menor nas passagens, com alguns tendo pagado um número bem maior;
 5. **pclass:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que os passageiros de terceira classe representam mais que a soma dos passageiros de primeira e segunda classe que embarcaram; 
 6. **sex:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que o número de passeiros homens aparenta ser quase o dobro comparado ao de mulheres;
 7. **embarked:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que poucos embarcaram em Cherbourg e Queenstown, com os embarques em Southampton representando bem mais que o somatório dos que embarcaram nas outras localidades.
 
-- Fix análise bivariada
+- Conferi a variância das colunas e conclui que eram baixas e poderiam ser utilizadas na análise bivariada, sendo as seguintes:
+
+1. **survived x fare:** Os dados relativos ao valor da passagem dos sobreviventes e das vítimas são bem parecidos até por volta de £ 300, sendo relevantes os valores acima de £ 500 nos valores dos sobreviventes, indicando que quem pagou esse valor mais alto conseguiu sobreviver;
+2. **survived x age:** Dados muito parecidos, não diz nada que seja relevante para afirmar que idade foi fator importante na sobrevivência;
+3. **survived x sibsp:** Dados muito parecidos até 4 irmãos/esposo (a), ter além disso foi decisivo em tornar os passageiros vítimas;
+4. **survived x parch:** Dados muito parecidos, há mais casos a partir de 3 pais/filhos, mas nada que possa ser afirmado como diferencial na taxa de sobrevivência;
+5. **survived x sex:** Ser do sexo feminino foi fator fundamental para sobrevivência, enquanto a grande maioria dos passageiros do sexo masculino foram vítimas, o número de sobreviventes do sexo feminino é 2x maior do que o número de vítimas desse sexo;
+6. **survived x pclass:** A classe social foi fator importante na sobrevivência, quanto maior a classe, menor o número de vítimas, sendo destaque os passageiros da primeira classe, única coluna em que há mais sobreviventes do que vítimas;
+7. **survived x embarked:** O local de embarque influenciou na sobrevivência, com o número de sobreviventes sendo maior do que o número de vítimas nos que embarcaram em Cherbourg.
+
+- Fiz análise multivariada para ver a relação entre as seguintes colunas:
+
+1. **survived x embarked x fare:** Os dados são muito parecidos até £ 300, sendo relevantes os valores acima de £ 500 nos valores dos sobreviventes, com todos tendo embarcado em Cherbourg;
+2. **survived x embarked x sex:** Os dados não apresentam algo que leve a poder afirmar que a relação sexo e onde embarcaram foram juntos fator de sobrevivência;
+3. **survived x embarked x pclass:** Os dados não apresentam algo que leve a poder afirmar que a relação classe e onde embarcaram foram juntos fator de sobrevivência.
+
+### 5. Insights e Conclusões
