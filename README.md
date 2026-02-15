@@ -57,7 +57,7 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 4. **fare:** Distribuição assimétrica à direita, com a grande maioria dos passageiros tendo pagado um valor menor nas passagens, com alguns tendo pagado um número bem maior;
 5. **pclass:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que os passageiros de terceira classe representam mais que a soma dos passageiros de primeira e segunda classe que embarcaram; 
 6. **sex:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que o número de passeiros homens aparenta ser quase o dobro comparado ao de mulheres;
-7. **embarked:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que poucos embarcaram em Cherbourg e Queenstown, com os embarques em Southampton representando bem mais que o somatório dos que embarcaram nas outras localidades.
+7. **embarked:** Mesma interpretação da feita nas estastísticas básicas, mostrando visualmente que poucos embarcaram em Cherbourg e Queenstown, com os embarques em Southampton representando mais que o somatório dos que embarcaram nas outras localidades.
 
 - Conferi a variância das colunas e conclui que eram baixas e poderiam ser utilizadas na análise bivariada, sendo as seguintes:
 
@@ -66,13 +66,16 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 3. **survived x sibsp:** Dados muito parecidos até 4 irmãos/esposo (a), ter além disso foi decisivo em tornar os passageiros vítimas;
 4. **survived x parch:** Dados muito parecidos, há mais casos a partir de 3 pais/filhos, mas nada que possa ser afirmado como diferencial na taxa de sobrevivência;
 5. **survived x sex:** Ser do sexo feminino foi fator fundamental para sobrevivência, enquanto a grande maioria dos passageiros do sexo masculino foram vítimas, o número de sobreviventes do sexo feminino é 2x maior do que o número de vítimas desse sexo;
-6. **survived x pclass:** A classe social foi fator importante na sobrevivência, quanto maior a classe, menor o número de vítimas, sendo destaque os passageiros da primeira classe, única coluna em que há mais sobreviventes do que vítimas;
-7. **survived x embarked:** O local de embarque influenciou na sobrevivência, com o número de sobreviventes sendo maior do que o número de vítimas nos que embarcaram em Cherbourg.
+6. **survived x pclass:** A classe social foi fator importante na sobrevivência, quanto maior a classe, menor o número de vítimas, sendo destaque os passageiros da primeira classe, única coluna em que há mais sobreviventes do que vítimas, e da terceira classe, na qual o número de vítimas aparenta ser 3x maior que o de sobreviventes;
+7. **survived x embarked:** Notório o fato de que o número de vítimas que embarcaram em Southampton aparenta ser o dobro dos que conseguiram sobreviver, enquanto nas outras duas localidades é mais parelho, sem tanta disparidade entre vítimas e sobreviventes.
 
-- Fiz análise multivariada para ver a relação entre as seguintes colunas:
+- Fiz análise multivariada para explorar a relação entre o local de embarque e outras variáveis:
 
 1. **survived x embarked x fare:** Os dados são muito parecidos até £ 300, sendo relevantes os valores acima de £ 500 nos valores dos sobreviventes, com todos tendo embarcado em Cherbourg;
-2. **survived x embarked x sex:** Os dados não apresentam algo que leve a poder afirmar que a relação sexo e onde embarcaram foram juntos fator de sobrevivência;
-3. **survived x embarked x pclass:** Os dados não apresentam algo que leve a poder afirmar que a relação classe e onde embarcaram foram juntos fator de sobrevivência.
+2. **survived x embarked x pclass:** Os dados da análise bivariada mostraram que a grande maioria das vítimas embarcaram em Southampton, e os dados dessa relação multivariada mostra que a maioria esmagadora dos que embarcaram nesse porto eram de terceira classe. 
 
-### 5. Insights e Conclusões
+### 5. Insights e Conclusões (não finalizado)
+
+- Os principais insights acerca dessa análise foram:
+
+1. A análise mostrou que a maioria dos passageiros embarcou em Southampton e eram de terceira classe e que a maioria das vítimas foram dessa classe;
