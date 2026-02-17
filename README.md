@@ -31,14 +31,14 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 
 - Verifiquei a presença de outliers nas colunas numéricas contínuas age, sibsp, parch e fare, e, como a análise busca determinar a relação entre as colunas e a coluna target survived, foi prudente deixar os outliers. Antes de prosseguir, verifiquei a relação entre o valor de pagamento (fare) e classe (pclass), para verificar se o valor alto representava algum erro, e, como todas as três ocorrências do valor representaram pessoas da primeira classe, julguei prudente manter os outliers.
 
-- Expus as estatísticas básicas para as colunas, obtendo o seguinte insight:
+- Expus as estatísticas básicas para as colunas, obtendo os seguintes insights:
 
 1. **survived:** Somente aproximadamente 38,38% dos passageiros conseguiram sobreviver;
-2. **pclass:** A grande maior dos passageiros era de terceira classe (aprox. 51,11%), representando mais que a soma entre passageiros da primeira (aprox. 24,24%) e segunda classe (aprox. 20,65%);
+2. **pclass:** A grande maioria dos passageiros era de terceira classe (aprox. 51,11%), representando mais que a soma entre passageiros da primeira (aprox. 24,24%) e segunda classe (aprox. 20,65%);
 3. **sex:** aprox. 64,76% dos passageiros eram do sexo masculino;
-4. **age:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem entre 0,42 (5,04 meses) e 35 anos, enquanto o maior valor é 80, evidenciando uma discrepância crescente, que implica na média não confiável; 
-5. **sibsp:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem entre 0 e 1 esposo (a)/irmãos, enquanto o maior valor é 8, evidenciando uma discrepância crescente, que implica na média não confiável;
-6. **parch:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuem 0 pais/filhos, enquanto o maior valor é 6, evidenciando uma discrepância crescente, que implica na média não confiável;
+4. **age:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuía entre 0,42 (5,04 meses) e 35 anos, enquanto o maior valor é 80, evidenciando uma discrepância crescente, que implica na média não confiável; 
+5. **sibsp:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuía entre 0 e 1 esposo (a)/irmãos, enquanto o maior valor é 8, evidenciando uma discrepância crescente, que implica na média não confiável;
+6. **parch:** A média para essa variável não é confiável. Ao menos 75% dos passageiros possuía 0 pais/filhos, enquanto o maior valor é 6, evidenciando uma discrepância crescente, que implica na média não confiável;
 7. **fare:** A média para essa variável não é confiável. Ao menos 75% dos passageiros desembolsaram entre £ 0 e £ 31, enquanto o maior valor foi aproximadamente £ 512,33, evidenciando uma discrepância crescente extremamente alta no valor que alguns passageiros pagaram, que implica na média não confiável;
 8. **embarked:** A grande maioria (aprox. 72.50%) embarcaram no porto de Southampton.
 
@@ -78,4 +78,18 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 
 - Os principais insights acerca dessa análise foram:
 
-1. A análise mostrou que a maioria dos passageiros embarcou em Southampton e eram de terceira classe e que a maioria das vítimas foram dessa classe;
+1. Somente aproximadamente 38,38% dos passageiros sobreviveram;
+2. A menor idade entre os passageiros era de 5,04 meses (!!!), enquanto a maior era de 80 anos;
+3. Ao menos 75% dos passageiros possuía entre 0 e 1 esposo (a)/irmãos, enquanto o maior valor é 8;
+4. Ao menos 75% dos passageiros possuía 0 pais/filhos, enquanto o maior valor é 6;
+5. Ao menos 75% dos passageiros desembolsaram entre £ 0 e £ 31, enquanto o maior valor foi aproximadamente £ 512,33.
+
+- Segue abaixo os fatores que mais influenciaram à sobrevivência:
+
+1. **pclass:** Quanto maior a classe (primeira à terceira), menor o número de vítimas;
+2. **sex:** Ser do sexo feminino foi fator fundamental para sobrevivência;
+3. **fare:** Todos que pagaram além de £ 300 sobreviveram;
+4. **sibsp:** Ter além de 4 irmãos/esposo (a) foi decisivo em tornar os passageiros vítimas;
+5. **embarked:** A análise extra (multivariada) local de embarque por si só não foi fator decisivo para sobrevivência, porém a análise mostrou que todos que pagaram além de £ 300 embarcaram em Cherbourg e a grande maioria que embarcou em Southampton era de terceira classe;
+
+- Segue abaixo as limitações da análise:
