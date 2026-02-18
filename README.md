@@ -1,12 +1,6 @@
-# Análise de dados utilizando Python
-
 Análise do dataset Titanic, buscando destrinchar as variáveis e como se relacionam com os dados de sobrevivência.
 
 ### Passo a passo
-
-### 0. Imports
-
-- Inicialmente, importei as bibliotecas pandas, seaborn e o método pyplot da biblioteca matplotlib.
 
 ### 1. Carregando o conjunto de dados
 
@@ -74,7 +68,7 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 1. **survived x embarked x fare:** Os dados são muito parecidos até £ 300, sendo relevantes os valores acima de £ 500 nos valores dos sobreviventes, com todos tendo embarcado em Cherbourg;
 2. **survived x embarked x pclass:** Os dados da análise bivariada mostraram que a grande maioria das vítimas embarcaram em Southampton, e os dados dessa relação multivariada mostra que a maioria esmagadora dos que embarcaram nesse porto eram de terceira classe. 
 
-### 5. Insights e Conclusões (não finalizado)
+### 5. Insights e Conclusões
 
 - Os principais insights acerca dessa análise foram:
 
@@ -91,5 +85,3 @@ Análise do dataset Titanic, buscando destrinchar as variáveis e como se relaci
 3. **fare:** Todos que pagaram além de £ 300 sobreviveram;
 4. **sibsp:** Ter além de 4 irmãos/esposo (a) foi decisivo em tornar os passageiros vítimas;
 5. **embarked:** A análise extra (multivariada) local de embarque por si só não foi fator decisivo para sobrevivência, porém a análise mostrou que todos que pagaram além de £ 300 embarcaram em Cherbourg e a grande maioria que embarcou em Southampton era de terceira classe;
-
-- Segue abaixo as limitações da análise:
